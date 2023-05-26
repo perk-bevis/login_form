@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  background: url('https://img4.thuthuatphanmem.vn/uploads/2019/12/09/hinh-nen-mau-den-tim_040931103.jpg')
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+  
+  /* --------------- */
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/image.png') no-repeat center center;
+    z-index: -1;
+  }
+  .container {
+    max-width: 850px;
+    width: 100%;
+    /* height: 80vh; */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.minerspromise.org.au/wp-content/uploads/2015/08/life-lost-cover.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.9;
+    padding: 100px 70px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -2;
+  }
+  .banner__title {
+    top: 80px;
+    left: 50px;
+    position: absolute;
+    color: #fff;
+    letter-spacing: 0px;
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  .banner__desc {
+    margin-top: 30px;
+    margin-left: -15px;
+    font-weight: 400;
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .banner__btn {
+    display: block;
+    padding: 4px 8px;
+    margin-left: -15px;
+    font-weight: 800;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  /* ------------------ */
+  .form {
+    width: 100%;
+    height: 100%;
+    padding: 100px 70px;
+  
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .form__group {
+    position: relative;
+    width: 100%;
+  }
+  .form__input {
+    display: block;
+    width: 100%;
+    font-size: 24px;
+  }
+  
+  .effect {
+    border: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+  }
+  .effect ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 99;
+  }
+  .effect ~ .focus-border:before,
+  .effect ~ .focus-border:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #2f3e46;
+    transition: 0.4s;
+  }
+  .effect ~ .focus-border:after {
+    left: auto;
+    right: 0;
+  }
+  .effect:focus ~ .focus-border:before,
+  .effect:focus ~ .focus-border:after,
+  .has-content.effect ~ .focus-border:before,
+  .has-content.effect ~ .focus-border:after {
+    width: 50%;
+    transition: 0.4s;
+  }
+  .effect ~ label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 2px;
+    color: rgb(114, 114, 114);
+    z-index: 1;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+  }
+  .effect:focus ~ label,
+  .has-content.effect ~ label {
+    top: -16px;
+    font-size: 11px;
+    color: #2f3e46b0;
+    transition: 0.3s;
+  }
+  
+  .form__btn {
+    display: block;
+    background: #8473c2;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+  }
+  .form__btn:hover {
+    background: #7364a8;
+  }
+  .form__text {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .form__link {
+    color: #8473c2;
+    font-weight: 600;
+    text-decoration: underline;
+  }
